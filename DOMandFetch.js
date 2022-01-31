@@ -115,13 +115,13 @@ export function handleActiveClassesDOM({ state, prevState = {} }, type) {
         end.classList.add("active");
         next.classList.remove("active");
       }
-      currentPageLink.classList.add("active");
       prevPageLink.classList.remove("active");
-      if (prevState.active === 1) {
+      currentPageLink.classList.add("active");
+      if (prevState.active === 1 && state.active !== 1) {
         home.classList.remove("active");
         back.classList.add("active");
       }
-      if (prevState.active === state.nPages) {
+      if (prevState.active === state.nPages && state.active !== state.nPages) {
         end.classList.remove("active");
         next.classList.add("active");
       }
