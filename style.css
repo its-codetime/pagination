@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --main-color: #ffeddb;
+  --color-dark: #edcdbb;
+  --color-darker: #e3b7a0;
+  --color-darkest: #bf9270;
+}
+
+body {
+  background: var(--color-darkest);
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  padding: 0.2em;
+  color: black;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: black;
+  margin: 0 auto;
+  margin-top: 0.2em;
+}
+
+.form {
+  display: flex;
+  margin: 0.5em auto;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin-left: auto;
+}
+
+select {
+  font-size: 1.2rem;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  background: gold;
+  cursor: pointer;
+  color: black;
+  margin: 0 auto 0 1em;
+}
+
+select:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 3em;
+  box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
+  margin-bottom: 2em;
+}
+
+.nav {
+  display: flex;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--main-color);
+}
+
+.navlist {
+  display: flex;
+  list-style: none;
+  overflow-x: scroll;
+  margin: auto auto;
+}
+
+button {
+  padding: 1em;
+}
+
+.link {
+  padding: 1em;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  height: 2px;
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+.next,
+.back {
+  font-size: 1.4rem;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+}
+
+.home,
+.end,
+.next,
+.back {
+  color: var(--color-dark);
+  background: transparent;
+}
+
+.next.active,
+.back.active {
+  color: black;
+  background: var(--color-darkest);
+}
+
+.link[data-pageNo].active,
+.home.active,
+.end.active {
+  color: gold;
+  background: transparent;
+  font-weight: 900;
+  text-shadow: 0 0 5px white;
+}
+
+.card {
+  background: var(--color-darker);
+  color: black;
+  padding: 1em;
+  list-style: none;
+}
+
+.card > div {
+  padding: 0.2em;
+}
+
+article.pageItems {
+  padding-bottom: 5em;
+}
+
+@media screen and (min-width: 500px) {
+  .card {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .cardlist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .card {
+    width: 18rem;
+  }
+  .cardlist {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .cardlist {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
